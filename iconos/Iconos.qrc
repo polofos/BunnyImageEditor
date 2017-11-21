@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="iconos">
+    <file>palomita.png</file>
+    <file>umbral.png</file>
+    <file>Actions-document-save-icon.png</file>
+    <file>cerrar.ico</file>
+    <file>conejito.jpg</file>
+    <file>deshacer-icono-5403-128.png</file>
+    <file>folder_add.png</file>
+    <file>ubuntu_81616.png</file>
+  </qresource>
+</RCC>
