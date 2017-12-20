@@ -56,7 +56,7 @@ def mediana(I):
 	return mediana
 
 
-def umbralBinario(I, u, inv=0):
+def umbralBinario(I, u, inv=0, grises=0):
 	""" Funcion que recibe una imagen en grises y un umbral int
 	Args:
 		I 	: Imagen np.array en escala de grises
@@ -76,14 +76,57 @@ def umbralBinario(I, u, inv=0):
 	for i in range(0,r):
 		for j in range(0,c):
 			if I[i,j] <= u:
-				I2[i,j] = piso
-
+				if not grises or inv:
+					I2[i,j] = piso
 			else:
-				I2[i,j] = techo
+				if not grises or not inv:
+					I2[i,j] = techo
 	return I2
 
-def umbralesBinarios(I, u, bina=0, inv=0):
-	""" Funcion que recibe ,una imagen en grises y varios umbrales int[]
+def umbralesBinarios(I, u, grises=[0,0,0], inv=0):
+	r, c = I.shape
+	I2 = I.copy()
+	for i in range(0,r):
+		for j in range(0,c):
+			if inv:
+				I2[i,j] = 255
+			else:
+				I2[i,j] = 0
+	gris=0
+	for um in u:
+		for i in range(0,r): 
+			for j in range(0,c):
+				if I[i,j] > um:
+					if not grises[gris]:
+						if inv:
+							I2[i,j] = 255 - um
+						else:
+							I2[i,j] = um
+					else:
+						if inv:
+							I2[i,j] = 255 - I[i,j]
+						else:
+							I2[i,j] = I[i,j]
+		gris += 1
+	gris -= 1
+	for i in range(0,r):
+		for j in range(0,c):
+			if I[i,j] > um:
+				if not grises[gris]:
+					if inv:
+						I2[i,j] = 0
+					else:
+						I2[i,j] = 255
+				else:
+					if inv:
+						I2[i,j] = 255 - I[i,j]
+					else:
+						I2[i,j] = I[i,j]
+	return I2
+
+"""
+def umbralesBinarios(I, u, grises=[0,0,0], inv=0):
+	 Funcion que recibe ,una imagen en grises y varios umbrales int[]
 	Args:
 		I 	: Imagen np.array en escala de grises
 		u 	: Umbrales int[]
@@ -93,7 +136,7 @@ def umbralesBinarios(I, u, bina=0, inv=0):
 			- 1: bin,ran,bin
 			- 2: ran,bin,ran PENDIENTE
 			- 3: ran,ran,ran PENDIENTE
-	"""
+	
 	r, c = I.shape
 	I2 = I.copy()
 	if bina == 0:
@@ -140,8 +183,7 @@ def umbralesBinarios(I, u, bina=0, inv=0):
 						I2[i,j] = 255
 
 	return I2
-
-
+"""
 
 
 def grises(I,p = 0):

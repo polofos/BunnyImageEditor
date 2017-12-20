@@ -44,6 +44,20 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <layout class="QGridLayout" name="gridLayout">
+         <item row="3" column="0">
+          <widget class="QRadioButton" name="manual">
+           <property name="text">
+            <string>Manual</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QRadioButton" name="mediana">
+           <property name="text">
+            <string>Mediana</string>
+           </property>
+          </widget>
+         </item>
          <item row="3" column="1">
           <widget class="QLabel" name="sValue">
            <property name="layoutDirection">
@@ -57,29 +71,15 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QRadioButton" name="radioButton_4">
-           <property name="text">
-            <string>Manual</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QRadioButton" name="radioButton_2">
-           <property name="text">
-            <string>Mediana</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0">
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="media">
            <property name="text">
             <string>Media</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QRadioButton" name="radioButton_3">
+          <widget class="QRadioButton" name="moda">
            <property name="text">
             <string>Moda</string>
            </property>
@@ -95,19 +95,6 @@
            </property>
           </widget>
          </item>
-         <item row="6" column="0">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
          <item row="6" column="1">
           <widget class="QCheckBox" name="invertir">
            <property name="text">
@@ -115,6 +102,13 @@
            </property>
            <property name="tristate">
             <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QCheckBox" name="grises">
+           <property name="text">
+            <string>grises</string>
            </property>
           </widget>
          </item>

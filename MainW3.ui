@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>103</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1300</width>
+    <height>103</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1300</width>
+    <height>103</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Bunny Image Analizer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="iconos/Iconos.qrc">
+    <normaloff>:/iconos/conejito.jpg</normaloff>:/iconos/conejito.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1300</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+   </widget>
+   <addaction name="menuArchivo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAbrir"/>
+   <addaction name="actionGuardar"/>
+   <addaction name="actionCerrar"/>
+   <addaction name="actionDeshacer"/>
+   <addaction name="separator"/>
+   <addaction name="actionEscalaDeGrises"/>
+   <addaction name="actionRGB"/>
+   <addaction name="separator"/>
+   <addaction name="actionSuma"/>
+   <addaction name="actionResta"/>
+   <addaction name="actionMultiplicacion"/>
+   <addaction name="actionAnd"/>
+   <addaction name="actionOr"/>
+   <addaction name="actionExor"/>
+   <addaction name="actionNot"/>
+   <addaction name="separator"/>
+   <addaction name="actionHist"/>
+   <addaction name="actionExpand"/>
+   <addaction name="actionContr"/>
+   <addaction name="actionDespl"/>
+   <addaction name="actionEcu"/>
+   <addaction name="separator"/>
+   <addaction name="actionPromedio"/>
+   <addaction name="actionPromedio_Pesado"/>
+   <addaction name="actionFiltro_gausiano"/>
+   <addaction name="separator"/>
+   <addaction name="actionLaplaciano"/>
+   <addaction name="actionPrewitt"/>
+   <addaction name="actionSobel"/>
+   <addaction name="actionRobert"/>
+   <addaction name="separator"/>
+   <addaction name="actionPasabanda"/>
+   <addaction name="separator"/>
+   <addaction name="actionUmbralizar"/>
+   <addaction name="actionMultiumbral"/>
+   <addaction name="separator"/>
+   <addaction name="actionCierre"/>
+   <addaction name="actionApertura"/>
+  </widget>
+  <action name="actionAbrir">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/folder_add.png</normaloff>:/iconos/folder_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+   <property name="toolTip">
+    <string>Abrir archivo</string>
+   </property>
+   <property name="statusTip">
+    <string>Abriendo archivo</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/Actions-document-save-icon.png</normaloff>:/iconos/Actions-document-save-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+   <property name="toolTip">
+    <string>Guardar imagen</string>
+   </property>
+  </action>
+  <action name="actionUmbralizar">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/umbral.png</normaloff>iconos/umbral.png</iconset>
+   </property>
+   <property name="text">
+    <string>Umbralizar</string>
+   </property>
+   <property name="toolTip">
+    <string>Umbralizar imagen</string>
+   </property>
+  </action>
+  <action name="actionCerrar">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/cerrar.ico</normaloff>:/iconos/cerrar.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Cerrar </string>
+   </property>
+   <property name="toolTip">
+    <string>Cerrar imagen</string>
+   </property>
+  </action>
+  <action name="actionDeshacer">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/deshacer-icono-5403-128.png</normaloff>:/iconos/deshacer-icono-5403-128.png</iconset>
+   </property>
+   <property name="text">
+    <string>deshacer</string>
+   </property>
+   <property name="toolTip">
+    <string>Deshacer</string>
+   </property>
+  </action>
+  <action name="actionEscalaDeGrises">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/images.jpeg</normaloff>iconos/images.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>escalaDeGrises</string>
+   </property>
+   <property name="toolTip">
+    <string>Convierte la imagen a escala de grises</string>
+   </property>
+  </action>
+  <action name="actionRGB">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/rgb.png</normaloff>:/iconos/rgb.png</iconset>
+   </property>
+   <property name="text">
+    <string>RGB</string>
+   </property>
+   <property name="toolTip">
+    <string>Escoger un canal RGB</string>
+   </property>
+  </action>
+  <action name="actionSuma">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/suma.jpg</normaloff>:/iconos/suma.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Suma</string>
+   </property>
+   <property name="toolTip">
+    <string>Suma</string>
+   </property>
+  </action>
+  <action name="actionResta">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/resta.jpg</normaloff>:/iconos/resta.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Resta</string>
+   </property>
+   <property name="toolTip">
+    <string>Resta</string>
+   </property>
+  </action>
+  <action name="actionMultiplicacion">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/multiplicacion.jpg</normaloff>:/iconos/multiplicacion.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Multiplicacion</string>
+   </property>
+   <property name="toolTip">
+    <string>Multiplicación</string>
+   </property>
+  </action>
+  <action name="actionAnd">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/intersection.png</normaloff>:/iconos/intersection.png</iconset>
+   </property>
+   <property name="text">
+    <string>And</string>
+   </property>
+   <property name="toolTip">
+    <string>And</string>
+   </property>
+  </action>
+  <action name="actionOr">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/union.png</normaloff>:/iconos/union.png</iconset>
+   </property>
+   <property name="text">
+    <string>Or</string>
+   </property>
+   <property name="toolTip">
+    <string>Or</string>
+   </property>
+  </action>
+  <action name="actionExor">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/xor.png</normaloff>:/iconos/xor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exor</string>
+   </property>
+   <property name="toolTip">
+    <string>Exor</string>
+   </property>
+  </action>
+  <action name="actionNot">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/not.png</normaloff>:/iconos/not.png</iconset>
+   </property>
+   <property name="text">
+    <string>Not</string>
+   </property>
+   <property name="toolTip">
+    <string>Not</string>
+   </property>
+  </action>
+  <action name="actionHist">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/histogram_39554.png</normaloff>:/iconos/histogram_39554.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hist</string>
+   </property>
+   <property name="toolTip">
+    <string>Histograma</string>
+   </property>
+  </action>
+  <action name="actionExpand">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/expansion1.png</normaloff>:/iconos/expansion1.png</iconset>
+   </property>
+   <property name="text">
+    <string>expand</string>
+   </property>
+   <property name="toolTip">
+    <string>Expansión del histograma</string>
+   </property>
+  </action>
+  <action name="actionContr">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/contraccion.svg</normaloff>:/iconos/contraccion.svg</iconset>
+   </property>
+   <property name="text">
+    <string>contr</string>
+   </property>
+   <property name="toolTip">
+    <string>Contracción del histograma</string>
+   </property>
+  </action>
+  <action name="actionDespl">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/desplazar.svg</normaloff>:/iconos/desplazar.svg</iconset>
+   </property>
+   <property name="text">
+    <string>despl</string>
+   </property>
+   <property name="toolTip">
+    <string>Desplazamiento del histograma</string>
+   </property>
+  </action>
+  <action name="actionEcu">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/ecualizar.png</normaloff>:/iconos/ecualizar.png</iconset>
+   </property>
+   <property name="text">
+    <string>ecu</string>
+   </property>
+   <property name="toolTip">
+    <string>Ecualización del histograma</string>
+   </property>
+  </action>
+  <action name="actionPromedio">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/Promedio.png</normaloff>:/iconos/Promedio.png</iconset>
+   </property>
+   <property name="text">
+    <string>Promedio</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtro Promedio</string>
+   </property>
+  </action>
+  <action name="actionPromedio_Pesado">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/PromedioPesado.png</normaloff>:/iconos/PromedioPesado.png</iconset>
+   </property>
+   <property name="text">
+    <string>Promedio Pesado</string>
+   </property>
+   <property name="toolTip">
+    <string>Promedio Pesado</string>
+   </property>
+  </action>
+  <action name="actionFiltro_gausiano">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/gaussian1.png</normaloff>:/iconos/gaussian1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Filtro gausiano</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtro Gausiano 3x3</string>
+   </property>
+  </action>
+  <action name="actionPrewitt">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/prewitt.png</normaloff>:/iconos/prewitt.png</iconset>
+   </property>
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtro Prewitt</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/sobel.png</normaloff>:/iconos/sobel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtro Sobel</string>
+   </property>
+  </action>
+  <action name="actionLaplaciano">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/laplaciano.png</normaloff>:/iconos/laplaciano.png</iconset>
+   </property>
+   <property name="text">
+    <string>Laplaciano</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtro Laplaciano</string>
+   </property>
+  </action>
+  <action name="actionRobert">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/robert.png</normaloff>:/iconos/robert.png</iconset>
+   </property>
+   <property name="text">
+    <string>robert</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtro Robert</string>
+   </property>
+  </action>
+  <action name="actionCierre">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/cierre.png</normaloff>:/iconos/cierre.png</iconset>
+   </property>
+   <property name="text">
+    <string>cierre</string>
+   </property>
+   <property name="toolTip">
+    <string>Cierre</string>
+   </property>
+  </action>
+  <action name="actionApertura">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/apertura.png</normaloff>:/iconos/apertura.png</iconset>
+   </property>
+   <property name="text">
+    <string>apertura</string>
+   </property>
+   <property name="toolTip">
+    <string>Apertura</string>
+   </property>
+  </action>
+  <action name="actionPasabanda">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/pasabanda.png</normaloff>:/iconos/pasabanda.png</iconset>
+   </property>
+   <property name="text">
+    <string>pasabanda</string>
+   </property>
+   <property name="toolTip">
+    <string>Filtros pasabanda</string>
+   </property>
+  </action>
+  <action name="actionMultiumbral">
+   <property name="icon">
+    <iconset resource="iconos/Iconos.qrc">
+     <normaloff>:/iconos/bandagrises.png</normaloff>:/iconos/bandagrises.png</iconset>
+   </property>
+   <property name="text">
+    <string>multiumbral</string>
+   </property>
+   <property name="toolTip">
+    <string>Multiumbral</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="iconos/Iconos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

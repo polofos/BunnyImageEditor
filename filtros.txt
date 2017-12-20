@@ -1,0 +1,12 @@
+Filtros pasa bajas:
+Unidad2, primera parte p29
+- promedio o de caja
+- promedio pesado o estandar
+- gaussiano
+
+Filtros pasa altas:
+- Laplaciano
+- Gradiente
+- Bordes
+- Kirsch
+

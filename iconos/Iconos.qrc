@@ -1,5 +1,34 @@
 <RCC>
   <qresource prefix="iconos">
+    <file>bandagrises.png</file>
+    <file>apertura.png</file>
+    <file>cierre.png</file>
+    <file>pasabanda.png</file>
+    <file>robert.png</file>
+    <file>sobel.png</file>
+    <file>laplaciano.png</file>
+    <file>prewitt.png</file>
+    <file>expansion1.png</file>
+    <file>Promedio.png</file>
+    <file>PromedioPesado.png</file>
+    <file>desplazar.svg</file>
+    <file>gaussian1.png</file>
+    <file>ecualizar.png</file>
+    <file>histogram_39554.png</file>
+    <file>contraccion.svg</file>
+    <file>not.png</file>
+    <file>intersection.png</file>
+    <file>resta.jpg</file>
+    <file>suma.jpg</file>
+    <file>xor.png</file>
+    <file>multiplicacion.jpg</file>
+    <file>union.png</file>
+    <file>dilatacion.png</file>
+    <file>erosion.png</file>
+    <file>rehacer-icono-5403-128.png</file>
+    <file>Mapa mental.png</file>
+    <file>images.jpeg</file>
+    <file>rgb.png</file>
     <file>palomita.png</file>
     <file>umbral.png</file>
     <file>Actions-document-save-icon.png</file>
